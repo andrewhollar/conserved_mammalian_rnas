@@ -27,7 +27,10 @@ def run_repeatMasker(genome_path):
 def main():
 
     genome_path_list = Path(GENOMES_DIR).glob('**/*.fna')
-    print(genome_path_list)
+
+    for genome in genome_path_list:
+        print(genome)
+    #print(genome_path_list)
 
     #job_pool = multiprocessing.Pool()
     #for repeat_masker_result in job_pool.imap_unordered(run_repeatMasker, )
