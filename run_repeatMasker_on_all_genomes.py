@@ -11,9 +11,6 @@ OUT_DIR = '/home/ahollar/project_conserved_rnas/repeat_masker_outlogs'
 GENOMES_DIR = '/home/ahollar/project_conserved_rnas/genomes'
 REPEAT_MASKER_EXC = '/home/ahollar/software/RepeatMasker/RepeatMasker'
 
-if not os.path.isdir(OUT_DIR):
-    os.makedirs(OUT_DIR)
-
 def run_repeatMasker(genome_path):
     output_log_path = open(os.path.join(OUT_DIR, str(str(genome_path).split('/')[-1] + ".out")), 'w')
     # repeat_masker_command = "{} --species mammals {}".format(REPEAT_MASKER_EXC, genome_path)
@@ -31,6 +28,9 @@ def run_repeatMasker(genome_path):
     return repeat_masker_process
 
 def main():
+    if not os.path.isdir(OUT_DIR):
+        os.makedirs(OUT_DIR)
+
     genome_path_list = Path(GENOMES_DIR).glob('**/*.fna')
 
     # for genome in genome_path_list:
