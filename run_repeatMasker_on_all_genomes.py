@@ -16,7 +16,7 @@ if not os.path.isdir(OUT_DIR):
 
 def run_repeatMasker(genome_path):
     output_log_path = open(os.path.join(OUT_DIR, str(str(genome_path).split('/')[-1] + ".out")), 'w')
-    repeat_masker_command = ".{} --species mammals {}".format(REPEAT_MASKER_EXC, genome_path)
+    repeat_masker_command = "{} --species mammals {}".format(REPEAT_MASKER_EXC, genome_path)
 
     print(output_log_path)
     print(repeat_masker_command)
