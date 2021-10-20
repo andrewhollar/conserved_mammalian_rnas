@@ -29,17 +29,15 @@ def run_repeatMasker(genome_path):
     print("RepeatMasker completed on {} genome in {} seconds.\n".format(genome_path, str(time.time() - start_time)))
 
 def main():
-
     genome_path_list = Path(GENOMES_DIR).glob('**/*.fna')
 
-    for genome in genome_path_list:
-        print(genome)
+    # for genome in genome_path_list:
+    #     print(genome)
     #print(genome_path_list)
 
     job_pool = multiprocessing.Pool()
     for repeat_masker_result in job_pool.imap_unordered(run_repeatMasker, genome_path_list):
         print(repeat_masker_result)
-
 
 if __name__=='__main__':
     main()
