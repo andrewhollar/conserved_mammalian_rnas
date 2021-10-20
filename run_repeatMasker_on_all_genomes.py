@@ -24,9 +24,10 @@ def run_repeatMasker(genome_path):
     start_time = time.time()
     #repeat_masker_process = subprocess.Popen(repeat_masker_command, shell=True, stdout=output_log_path, stderr=subprocess.PIPE)
     #rm_stderr = repeat_masker_process.communicate()[1]
-    # repeat_masker_process = subprocess.run([str('.' + REPEAT_MASKER_EXC), '--species', 'mammals', genome_path], stdout=output_log_path, universal_newlines=True)
+    repeat_masker_process = subprocess.run([str('.' + REPEAT_MASKER_EXC), '--species', 'mammals', genome_path], stdout=output_log_path, universal_newlines=True)
     
     print("RepeatMasker completed on {} genome in {} seconds.\n".format(genome_path, str(time.time() - start_time)))
+    return repeat_masker_process
 
 def main():
     genome_path_list = Path(GENOMES_DIR).glob('**/*.fna')
