@@ -16,15 +16,15 @@ if not os.path.isdir(OUT_DIR):
 
 def run_repeatMasker(genome_path):
     output_log_path = open(os.path.join(OUT_DIR, str(str(genome_path).split('/')[-1] + ".out")), 'w')
-    repeat_masker_command = "{} --species mammals {}".format(REPEAT_MASKER_EXC, genome_path)
+    # repeat_masker_command = "{} --species mammals {}".format(REPEAT_MASKER_EXC, genome_path)
 
-    print(output_log_path)
-    print(repeat_masker_command)
+    # print(output_log_path)
+    # print(repeat_masker_command)
 
     start_time = time.time()
     #repeat_masker_process = subprocess.Popen(repeat_masker_command, shell=True, stdout=output_log_path, stderr=subprocess.PIPE)
     #rm_stderr = repeat_masker_process.communicate()[1]
-    repeat_masker_process = subprocess.run([str('.' + REPEAT_MASKER_EXC), '--species', 'mammals', genome_path], stdout=output_log_path, universal_newlines=True)
+    repeat_masker_process = subprocess.run([str(REPEAT_MASKER_EXC), '--species', 'mammals', genome_path], stdout=output_log_path, universal_newlines=True)
     
     print("RepeatMasker completed on {} genome in {} seconds.\n".format(genome_path, str(time.time() - start_time)))
     output_log_path.close()
