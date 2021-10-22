@@ -11,7 +11,7 @@ REPEAT_MASKER_EXC = '/home/ahollar/software/RepeatMasker/RepeatMasker'
 
 def run_repeatMasker(genome_path):
     output_log_path = open(os.path.join(OUT_DIR, str(str(genome_path).split('/')[-1] + ".out")), 'w')
-    repeat_masker_process = subprocess.run([REPEAT_MASKER_EXC, '--species', 'mammals', '--par', '24', '--w', '--q', str(genome_path)], stdout=output_log_path, universal_newlines=True)    
+    repeat_masker_process = subprocess.run([REPEAT_MASKER_EXC, '--species', 'mammals', '--par', '23', '--w', '--q', str(genome_path)], stdout=output_log_path, universal_newlines=True)    
     output_log_path.close()
     return repeat_masker_process
 
