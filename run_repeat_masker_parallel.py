@@ -19,7 +19,7 @@ def main():
     if not os.path.isdir(OUT_DIR):
         os.makedirs(OUT_DIR)
 
-    genome_path_list = Path(GENOMES_DIR).glob('**/*.fna ')
+    genome_path_list = Path(GENOMES_DIR).glob('**/*.fna')
 
     for genome in genome_path_list:
         start_time = time.time()
