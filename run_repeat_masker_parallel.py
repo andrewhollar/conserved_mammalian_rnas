@@ -23,7 +23,7 @@ def main():
 
     for genome in genome_path_list:
         start_time = time.time()
-        if os.path.exists("".join(str(genome), ".masked")):
+        if os.path.exists(str(genome) +".masked"):
             print("RepeatMasker already completed on the {} genome.".format(str(genome)))
             continue
         # repeat_masker_output = run_repeatMasker(str(genome))
