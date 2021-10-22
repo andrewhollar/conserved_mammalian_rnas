@@ -26,7 +26,7 @@ def main():
         if os.path.exists("".join([str(genome), ".masked"])):
             print("RepeatMasker already completed on the {} genome.".format(str(genome)))
             continue
-        # repeat_masker_output = run_repeatMasker(str(genome))
+        repeat_masker_output = run_repeatMasker(str(genome))
         print("RepeatMasker completed on {} genome in {} seconds.\n".format(str(genome), str(time.time() - start_time)))
 
 if __name__=='__main__':
